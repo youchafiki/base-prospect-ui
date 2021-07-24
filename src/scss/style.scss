@@ -1,0 +1,25 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+.breadcrumb{
+
+    margin-bottom: 10px !important;
+    padding: 7px 10px !important;
+}
+.card-header {
+    padding: 0.4rem 1.25rem;}
+
+
+
+
+ .sidebar{
+    background: linear-gradient( 
+        360deg
+         ,#007942 0,#00ac7b);
+ }   

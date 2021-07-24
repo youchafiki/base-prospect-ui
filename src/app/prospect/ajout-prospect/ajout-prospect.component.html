@@ -1,0 +1,195 @@
+<div class="animated fadeIn">
+ <div class="row">
+    <div class="col-md-12 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            <strong>Formulaire</strong> Prospect
+          </div>
+          <div class="card-body pb-2">
+            <form #userProspect = "ngForm"  (ngSubmit) = "addProspect();" method="post" class="form-horizontal ">
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="nom">Nom</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="nom" name="nom" class="form-control form-control-sm" placeholder="Enter Nom.."  [(ngModel)]= prospect.nom>
+                  <!--  <span class="help-block">Please enter your email</span> --> 
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="prenom">Prénom</label>
+                <div class="col-md-3">
+                  <input type="text" id="prenom" name="prenom" class="form-control form-control-sm" placeholder="Enter Prénom.."  [(ngModel)]= prospect.prenom>
+                  <!--  <span class="help-block">Please enter your email</span> --> 
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="activity">Activité</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="activity" name="activity" class="form-control form-control-sm" placeholder="Enter Activité.."  [(ngModel)]= prospect.activity>
+                  <!--  <span class="help-block">Please enter your email</span> --> 
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="ville">Ville</label>
+                <div class="col-md-3">
+                  <input type="text" id="ville" name="ville" class="form-control form-control-sm" placeholder="Enter Ville.."  [(ngModel)]= prospect.ville>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="codePostal">Code postal</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="codePostal" name="codePostal" class="form-control form-control-sm" placeholder="Enter Code postal.."  [(ngModel)]= prospect.codePostal>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="telephone">Téléphone</label>
+                <div class="col-md-3">
+                  <input type="text" id="telephone" name="telephone" class="form-control form-control-sm" placeholder="Enter Téléphone.."  [(ngModel)]= prospect.telephone>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="banqueRisk">Banque risque</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="banqueRisk" name="banqueRisk" class="form-control form-control-sm" placeholder="Enter Banque risque.."  [(ngModel)]= prospect.banqueRisk>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="nombreEnfant">Nombre d'enfant</label>
+                <div class="col-md-3">
+                  <input type="text" id="nombreEnfant" name="nombreEnfant" class="form-control form-control-sm" placeholder="Enter Nombre enfant.."  [(ngModel)]= prospect.nombreEnfant>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+              </div>
+              
+                <div class="row justify-content-center border-top pt-2">
+                  <button type="submit" style="background-color: #3a4248; color: white;" value="submit" class="btn btn-sm  mr-1"><i class="fa fa-plus-square"></i> Ajouter</button>
+                
+                </div>
+              
+        
+            </form>
+          </div>
+        
+        </div>
+       
+      </div>
+ </div>
+ <div  class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Listes des prospects
+        </div>
+        <div class="card-body pb-2">
+          <table class="table table-bordered table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Identifiant</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Activité</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prospect of listProspects">
+                <td>{{prospect.identifier}}</td>
+                <td>{{prospect.lastname}}</td>
+                <td>{{prospect.firstname}}</td>
+               
+               
+                <td>{{prospect.activity}}</td>
+                <td>
+                    <button (click)='editProspect(prospect)' class="btn btn-sm btn-success" data-toggle="modal" (click)="largeModal.show()"><i class="fa fa-edit"></i> Modifier</button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+         <!-- <div class="row justify-content-center">
+            <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+         </div>
+          -->
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>
+
+
+<div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modifier Prospect</h4>
+          <button type="button" class="close" (click)="largeModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #userProspectModif = "ngForm"  (ngSubmit) = "saveChange();largeModal.hide()" method="post" class="form-horizontal ">
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="nomModif">Nom</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="nomModif" name="nomModif" class="form-control form-control-sm" placeholder="Enter Nom.."  [(ngModel)]= prospectModif.nom>
+                  <!--  <span class="help-block">Please enter your email</span> --> 
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="prenomModif">Prénom</label>
+                <div class="col-md-3">
+                  <input type="text" id="prenomModif" name="prenomModif" class="form-control form-control-sm" placeholder="Enter Prénom.."  [(ngModel)]= prospectModif.prenom>
+                  <!--  <span class="help-block">Please enter your email</span> --> 
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="activityModif">Activité</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="activityModif" name="activityModif" class="form-control form-control-sm" placeholder="Enter Activité.."  [(ngModel)]= prospectModif.activity>
+                  <!--  <span class="help-block">Please enter your email</span> --> 
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="villeModif">Ville</label>
+                <div class="col-md-3">
+                  <input type="text" id="villeModif" name="villeModif" class="form-control form-control-sm" placeholder="Enter Ville.."  [(ngModel)]= prospectModif.ville>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="codePostalModif">Code postal</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="codePostalModif" name="codePostalModif" class="form-control form-control-sm" placeholder="Enter Code postal.."  [(ngModel)]= prospectModif.codePostal>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="telephoneModif">Téléphone</label>
+                <div class="col-md-3">
+                  <input type="text" id="telephoneModif" name="telephoneModif" class="form-control form-control-sm" placeholder="Enter Téléphone.."  [(ngModel)]= prospectModif.telephone>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label col-form-label-sm" for="banqueRiskModif">Banque risque</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="banqueRiskModif" name="banqueRiskModif" class="form-control form-control-sm" placeholder="Enter Banque risque.."  [(ngModel)]= prospectModif.banqueRisk>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="nombreEnfantModif">Nombre enfant</label>
+                <div class="col-md-3">
+                  <input type="text" id="nombreEnfantModif" name="nombreEnfantModif" class="form-control form-control-sm" placeholder="Enter Nombre enfant.."  [(ngModel)]= prospectModif.nombreEnfant>
+                   <!-- <span class="help-block">Please enter your email</span> -->
+                </div>
+              </div>
+              <div class="modal-footer justify-content-center pt-1 pb-0">
+                <button type="button" class="btn btn-secondary" (click)="largeModal.hide()">Close</button>
+                <button type="submit" class="btn btn-primary" >Sauvegarder</button>
+              </div>
+            </form>
+        </div>
+       
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
