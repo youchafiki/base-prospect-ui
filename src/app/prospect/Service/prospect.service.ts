@@ -2,13 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prospect } from '../model/prospect';
+import { KeycloakService } from 'keycloak-angular';
+
 
 const optionRequete = {
-  headers: new HttpHeaders({ 
-    'Access-Control-Allow-Origin':'*',
-    "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS,POST, PUT",
-  
-  
+  headers: new HttpHeaders({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods' : 'GET, HEAD, OPTIONS, POST, PUT'
   })
 };
 
@@ -18,12 +18,24 @@ const optionRequete = {
 
 export class ProspectService {
 
+  private prospectUrl = 'http://localhost:8082/api/prospect';
 
-  private heroesUrl = 'http://localhost:8080/api/prospect'; 
+  constructor(private http: HttpClient, private keycloakService: KeycloakService) { }
 
-  constructor(private http: HttpClient) { }
+  getProspects(): Observable<Prospect[]> {
+      console.log(this.keycloakService.getToken());
+      const headers_object = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.keycloakService.getToken()
+  });
 
-  getProspects() : Observable<Prospect[]>{
-    return this.http.get<Prospect[]>(this.heroesUrl,optionRequete)
+      const httpOptions = {
+          headers: headers_object
+      };
+    return this.http.get<Prospect[]>(this.prospectUrl, httpOptions);
+  }
+ addProspects(prospect: Prospect): Observable<Prospect> {
+    console.log(prospect);
+    return this.http.post<Prospect>(this.prospectUrl, prospect, optionRequete);
   }
 }

@@ -10,43 +10,36 @@ import { ProspectService } from '../Service/prospect.service';
 })
 export class AjoutProspectComponent implements OnInit {
   @ViewChild('largeModal') public largeModal: ModalDirective;
-  prospect : Prospect = new Prospect() ;
-  prospectModif : Prospect = new Prospect() ;
-  prospectModifItem : Prospect = new Prospect() ;
-  displayTableList : boolean = false ;
-  listProspects : Prospect[] = [];
-  listProspectsUpdate : Prospect[] = [];
-  position : number ;
+  prospect: Prospect = new Prospect() ;
+  prospectModif: Prospect = new Prospect() ;
+  listProspects: Prospect[] = [];
+  listProspectsUpdate: Prospect[] = [];
+  position: number ;
 
-  constructor(private prospectService:ProspectService) { }
+  constructor(private prospectService: ProspectService) { }
 
   ngOnInit(): void {
-    this.prospectService.getProspects().subscribe(
-      result=>  this.listProspects=result
-    )
-   // this.prospect= {lastname :'tedrhi',activity:'informatique',firstname:'youness',identifier:"ident",id:1} ;
+   this.getListProspect();
   }
+  getListProspect() {
+        this.prospectService.getProspects().subscribe(
+            result =>  {this.listProspects = result ; console.log(result); }
+        );
+    }
   addProspect() {
- 
     console.log(this.prospect)
-    this.listProspects.push(this.prospect);
-    this.prospect=new Prospect();
-    this.displayTableList=true;
-    //this.prospect.nombreEnfant= data.nombreEnfantS ;
-console.log(this.prospect)
+    this.prospectService.addProspects(this.prospect).subscribe(
+       result =>   this.getListProspect()
+   );
  }
- 
- editProspect(prospectEdit){
+ editProspect(prospectEdit) {
   this.listProspectsUpdate = this.listProspects.slice();
   this.position = this.listProspectsUpdate.indexOf(prospectEdit)
- // this.listProspectsUpdate.splice(this.position ,1)
   this.prospectModif  = Object.assign({}, prospectEdit);
- 
- // this.listProspects = this.listProspects.filter(x=>x.nom != this.prospectModifItem.nom)
  }
- saveChange(){
-   this.listProspectsUpdate.splice(this.position,1,this.prospectModif);
-   this.listProspects = this.listProspectsUpdate.slice()
- 
+ saveChange() {
+      const deleteCount = 1;
+   this.listProspectsUpdate.splice(this.position, deleteCount, this.prospectModif);
+   this.listProspects = this.listProspectsUpdate.slice();
   }
 }

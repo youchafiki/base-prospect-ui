@@ -10,12 +10,14 @@
               <div class="form-group row">
                 <label class="col-md-2 col-form-label col-form-label-sm" for="nom">Nom</label>
                 <div class="col-md-3 ">
-                  <input type="text" id="nom" name="nom" class="form-control form-control-sm" placeholder="Enter Nom.."  [(ngModel)]= prospect.nom>
+                  <input type="text" id="nom" name="nom" class="form-control form-control-sm"
+                          placeholder="Enter Nom.."  [(ngModel)]= prospect.lastname>
                   <!--  <span class="help-block">Please enter your email</span> --> 
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="prenom">Prénom</label>
                 <div class="col-md-3">
-                  <input type="text" id="prenom" name="prenom" class="form-control form-control-sm" placeholder="Enter Prénom.."  [(ngModel)]= prospect.prenom>
+                  <input type="text" id="prenom" name="prenom" class="form-control form-control-sm"
+                          placeholder="Enter Prénom.."  [(ngModel)]= prospect.firstname>
                   <!--  <span class="help-block">Please enter your email</span> --> 
                 </div>
               </div>
@@ -27,32 +29,36 @@
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="ville">Ville</label>
                 <div class="col-md-3">
-                  <input type="text" id="ville" name="ville" class="form-control form-control-sm" placeholder="Enter Ville.."  [(ngModel)]= prospect.ville>
+                  <input type="text" id="ville" name="ville" class="form-control form-control-sm"
+                          placeholder="Enter Ville.."  [(ngModel)]= prospect.city>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-md-2 col-form-label col-form-label-sm" for="codePostal">Code postal</label>
                 <div class="col-md-3 ">
-                  <input type="text" id="codePostal" name="codePostal" class="form-control form-control-sm" placeholder="Enter Code postal.."  [(ngModel)]= prospect.codePostal>
+                  <input type="text" id="codePostal" name="codePostal" class="form-control form-control-sm"
+                          placeholder="Enter Code postal.."  [(ngModel)]= prospect.postalCode>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="telephone">Téléphone</label>
                 <div class="col-md-3">
-                  <input type="text" id="telephone" name="telephone" class="form-control form-control-sm" placeholder="Enter Téléphone.."  [(ngModel)]= prospect.telephone>
+                  <input type="text" id="telephone" name="telephone" class="form-control form-control-sm" placeholder="Enter Téléphone.."  [(ngModel)]= prospect.phoneNumber>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-md-2 col-form-label col-form-label-sm" for="banqueRisk">Banque risque</label>
+                <label class="col-md-2 col-form-label col-form-label-sm" for="address">Adresse</label>
                 <div class="col-md-3 ">
-                  <input type="text" id="banqueRisk" name="banqueRisk" class="form-control form-control-sm" placeholder="Enter Banque risque.."  [(ngModel)]= prospect.banqueRisk>
+                  <input type="text" id="address" name="address" class="form-control form-control-sm"
+                          placeholder="Enter Banque risque.."  [(ngModel)]= prospect.address>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
-                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="nombreEnfant">Nombre d'enfant</label>
-                <div class="col-md-3">
-                  <input type="text" id="nombreEnfant" name="nombreEnfant" class="form-control form-control-sm" placeholder="Enter Nombre enfant.."  [(ngModel)]= prospect.nombreEnfant>
-                   <!-- <span class="help-block">Please enter your email</span> -->
+                <label class="col-md-2 col-form-label col-form-label-sm" for="identifier">Identifier</label>
+                <div class="col-md-3 ">
+                  <input type="text" id="identifier" name="identifier" class="form-control form-control-sm"
+                          placeholder="identifier.."  [(ngModel)]= prospect.identifier>
+                  <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
               </div>
               
@@ -91,8 +97,6 @@
                 <td>{{prospect.identifier}}</td>
                 <td>{{prospect.lastname}}</td>
                 <td>{{prospect.firstname}}</td>
-               
-               
                 <td>{{prospect.activity}}</td>
                 <td>
                     <button (click)='editProspect(prospect)' class="btn btn-sm btn-success" data-toggle="modal" (click)="largeModal.show()"><i class="fa fa-edit"></i> Modifier</button>
@@ -155,19 +159,22 @@
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="villeModif">Ville</label>
                 <div class="col-md-3">
-                  <input type="text" id="villeModif" name="villeModif" class="form-control form-control-sm" placeholder="Enter Ville.."  [(ngModel)]= prospectModif.ville>
+                  <input type="text" id="villeModif" name="villeModif" class="form-control form-control-sm"
+                          placeholder="Enter Ville.."  [(ngModel)]= prospectModif.city>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-md-2 col-form-label col-form-label-sm" for="codePostalModif">Code postal</label>
                 <div class="col-md-3 ">
-                  <input type="text" id="codePostalModif" name="codePostalModif" class="form-control form-control-sm" placeholder="Enter Code postal.."  [(ngModel)]= prospectModif.codePostal>
+                  <input type="text" id="codePostalModif" name="codePostalModif" class="form-control form-control-sm"
+                          placeholder="Enter Code postal.."  [(ngModel)]= prospectModif.postalCode>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="telephoneModif">Téléphone</label>
                 <div class="col-md-3">
-                  <input type="text" id="telephoneModif" name="telephoneModif" class="form-control form-control-sm" placeholder="Enter Téléphone.."  [(ngModel)]= prospectModif.telephone>
+                  <input type="text" id="telephoneModif" name="telephoneModif" class="form-control form-control-sm"
+                          placeholder="Enter Téléphone.."  [(ngModel)]= prospectModif.phoneNumber>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
               </div>
@@ -179,7 +186,9 @@
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="nombreEnfantModif">Nombre enfant</label>
                 <div class="col-md-3">
-                  <input type="text" id="nombreEnfantModif" name="nombreEnfantModif" class="form-control form-control-sm" placeholder="Enter Nombre enfant.."  [(ngModel)]= prospectModif.nombreEnfant>
+                  <input type="text" id="nombreEnfantModif" name="nombreEnfantModif"
+                          class="form-control form-control-sm" placeholder="Enter Nombre enfant.."  [(ngModel)]=
+                          prospectModif.child>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
               </div>

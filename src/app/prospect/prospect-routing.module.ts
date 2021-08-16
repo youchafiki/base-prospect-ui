@@ -20,8 +20,7 @@ const routes: Routes = [
         data: {
           title: 'AjoutProspect'
         }
-      },
-     
+      }
     ]
   }
 ];

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ProspectRoutingModule } from './prospect-routing.module';
 import { AjoutProspectComponent } from './ajout-prospect/ajout-prospect.component';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ModalModule.forRoot(),
     HttpClientModule
-    
   ]
 })
 export class ProspectModule { }
