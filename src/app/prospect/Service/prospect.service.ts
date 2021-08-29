@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prospect } from '../model/prospect';
 import { KeycloakService } from 'keycloak-angular';
+import { environment } from '../../../environments/environment';
+
 
 
 const optionRequete = {
@@ -18,7 +20,7 @@ const optionRequete = {
 
 export class ProspectService {
 
-  private prospectUrl = 'http://localhost:8082/api/prospect';
+  private prospectUrl = environment.apiUrl+'/api/prospect';
 
   constructor(private http: HttpClient, private keycloakService: KeycloakService) { }
 

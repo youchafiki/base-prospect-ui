@@ -142,12 +142,14 @@
             <div class="form-group row">
                 <label class="col-md-2 col-form-label col-form-label-sm" for="nomModif">Nom</label>
                 <div class="col-md-3 ">
-                  <input type="text" id="nomModif" name="nomModif" class="form-control form-control-sm" placeholder="Enter Nom.."  [(ngModel)]= prospectModif.nom>
+                  <input type="text" id="nomModif" name="nomModif" class="form-control form-control-sm"
+                          placeholder="Enter Nom.."  [(ngModel)]= prospectModif.lastname>
                   <!--  <span class="help-block">Please enter your email</span> --> 
                 </div>
                 <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="prenomModif">Prénom</label>
                 <div class="col-md-3">
-                  <input type="text" id="prenomModif" name="prenomModif" class="form-control form-control-sm" placeholder="Enter Prénom.."  [(ngModel)]= prospectModif.prenom>
+                  <input type="text" id="prenomModif" name="prenomModif" class="form-control form-control-sm"
+                          placeholder="Enter Prénom.."  [(ngModel)]= prospectModif.firstname>
                   <!--  <span class="help-block">Please enter your email</span> --> 
                 </div>
               </div>
@@ -181,16 +183,17 @@
               <div class="form-group row">
                 <label class="col-md-2 col-form-label col-form-label-sm" for="banqueRiskModif">Banque risque</label>
                 <div class="col-md-3 ">
-                  <input type="text" id="banqueRiskModif" name="banqueRiskModif" class="form-control form-control-sm" placeholder="Enter Banque risque.."  [(ngModel)]= prospectModif.banqueRisk>
+                  <input type="text" id="banqueRiskModif" name="banqueRiskModif" class="form-control form-control-sm" placeholder="Enter Banque risque.."  [(ngModel)]= prospectModif.address>
                    <!-- <span class="help-block">Please enter your email</span> -->
                 </div>
-                <label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="nombreEnfantModif">Nombre enfant</label>
+                <!--label class="col-md-2 col-form-label col-form-label-sm offset-md-1" for="nombreEnfantModif">Nombre
+                enfant</label>
                 <div class="col-md-3">
                   <input type="text" id="nombreEnfantModif" name="nombreEnfantModif"
                           class="form-control form-control-sm" placeholder="Enter Nombre enfant.."  [(ngModel)]=
                           prospectModif.child>
-                   <!-- <span class="help-block">Please enter your email</span> -->
-                </div>
+                    <span class="help-block">Please enter your email</span>
+                </div-->
               </div>
               <div class="modal-footer justify-content-center pt-1 pb-0">
                 <button type="button" class="btn btn-secondary" (click)="largeModal.hide()">Close</button>

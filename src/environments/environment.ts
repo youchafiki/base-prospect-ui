@@ -6,9 +6,11 @@
 export const environment = {
   production: false,
   envName: 'local',
+  apiUrl: window["env"]["apiUrl"] || "default",
+  debug: window["env"]["debug"] || false,
   keycloak: {
     // Url of the Identity Provider
-    issuer: 'http://10.176.232.162:8080/auth/',
+    issuer: 'http://keycloak.dsira.bnpparibas.com/auth/',
 
     // Realm
     realm: 'collaborateurs',
