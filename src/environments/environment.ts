@@ -10,7 +10,7 @@ export const environment = {
   debug: window["env"]["debug"] || false,
   keycloak: {
     // Url of the Identity Provider
-    issuer: 'http://keycloak.dsira.bnpparibas.com/auth/',
+    issuer: 'https://keycloak.dsira.bnpparibas.com/auth/',
 
     // Realm
     realm: 'collaborateurs',
